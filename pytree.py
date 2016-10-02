@@ -64,18 +64,18 @@ def printTree(root_dir, level, current_indent):
 				numfiles += 1
 
 				if (index != treelen - 1): # for every line except the last one
-					print(indent + "|-- " + name)
+					print(indent + "\u251c\u2500\u2500 " + name)
 				else:
-					print(indent + "`-- " + name)
+					print(indent + "\u2514\u2500\u2500 " + name)
 			else:
 				numdirs += 1
 
 				if (index != treelen - 1): # for every line except the last one
-					print(indent + "|-- " + name)
-					indent = indent + "|   "
+					print(indent + "\u251c\u2500\u2500 " + name)
+					indent = indent + "\u2502   "
 					new_numdirs, new_numfiles = printTree(root_dir + "/" + name, level+1, indent)
 				else:
-					print(indent + "`-- " + name)
+					print(indent + "\u2514\u2500\u2500 " + name)
 					indent = indent + "    "
 					new_numdirs, new_numfiles = printTree(root_dir + "/" + name, level+1, indent)
 
